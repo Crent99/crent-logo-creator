@@ -8,7 +8,7 @@ async function promptUser() {
         {
             type: 'input',
             name: 'text',
-            message: 'Enter text for the logo:'
+            message: 'Enter any 3 letters that you want!:'
         },
         {
             type: 'list',
