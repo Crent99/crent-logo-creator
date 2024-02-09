@@ -17,7 +17,7 @@ Clone the repository and add to locacl folder.
 
 ## Usage
 
-Link to deployed application:
+make sure you have node.js installed and use node in the terminal on your local computer. Answer the questions that pop up and BOOM you'll have your logo.
 
 ## Contacts
 
