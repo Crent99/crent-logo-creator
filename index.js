@@ -22,20 +22,18 @@ const questions = [
     type: 'input',
     name: 'shapeColor',
     message: 'What color would you like the shape to be?',
-  }
+  },
+
 ];
 
 function init() {
-  inquirer.prompt(questions).then((theAnswers) => {
-
-    //saving answers into finalSvgText 
-    const finalSvgText = svg(theAnswers);
-
-    //write this text to file
-    fs.writeFile("./examples/logo.svg", finalSvgText, (err) =>
-      err ? console.log(err) : console.log("Generated logo.svg!")
-    );
-  });
+    inquirer.prompt(questions).then((theAnswers) => {
+        const finalSvgText = svg(theAnswers);
+        fs.writeFile("./examples/logo.svg", finalSvgText, (err) =>
+            err ? console.log(err) : console.log("Generated logo.svg!")
+        );
+    });
 }
- 
+
 init();
+
