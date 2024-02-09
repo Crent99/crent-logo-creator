@@ -1,38 +1,41 @@
 const inquirer = require('inquirer');
+const fs = require("fs");
 
-inquirer
-    .prompt([
-        {
-            type: 'input',
-            name: 'name',
-            message: 'What is your name?'
-        },
-        {
-            type: 'input',
-            name: 'location',
-            message: 'Where are you from?'
-        },
-        {
-            type: 'input',
-            name: 'hobby',
-            message: 'What is your favorite hobby?'
-        },
-        {
-            type: 'input',
-            name: 'food',
-            message: 'What is your favorite food?'
-        },
-        {
-            type: 'input',
-            name: 'github',
-            message: 'What is your GitHub username?'
-        },
-        {
-            type: 'input',
-            name: 'linkedin',
-            message: 'What is your LinkedIn username?'
-        }
-    ])
-    .then(answers => {
-        console.log(answers);
-    });
+const questions = [
+  {
+    type: 'input',
+    name: 'letters',
+    message: 'Type any 3 letters you would like to choose.',
+  },
+  {
+    type: 'input',
+    name: 'textColor',
+    message: 'What color would you like the text to be?',
+  },
+  {
+    type: 'input',
+    name: 'shapes',
+    message: 'What shape would you like to choose from the following: circle, square, triangle?',
+    choices: ["circle", "square", "triangle"]
+  },
+  {
+    type: 'input',
+    name: 'shapeColor',
+    message: 'What color would you like the shape to be?',
+  }
+];
+
+function init() {
+  inquirer.prompt(questions).then((theAnswers) => {
+
+    //saving answers into finalSvgText 
+    const finalSvgText = svg(theAnswers);
+
+    //write this text to file
+    fs.writeFile("./examples/logo.svg", finalSvgText, (err) =>
+      err ? console.log(err) : console.log("Generated logo.svg!")
+    );
+  });
+}
+ 
+init();
