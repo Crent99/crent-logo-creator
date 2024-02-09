@@ -26,4 +26,4 @@ make sure you have node.js installed and use node in the terminal on your local 
 
 ## Walkthrough
 
-Link to walkthrough: 
+Link to walkthrough: https://www.youtube.com/watch?v=8UxWV1LX0bY
